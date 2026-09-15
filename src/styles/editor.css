@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "DINProCondBlackIta";
+  src: url("/fonts/DINPro-CondBlackIta.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DINProCondLightIta";
+  src: url("/fonts/DINPro-CondLightIta.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DFGGothicSU";
+  src: url("/fonts/DFGGothic-SU.otf") format("opentype"),
+    url("/fonts/DFGGothic-SU.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bois: #7c3aed;
+  --bois-soft: #a658ff;
+  --ink: #07040f;
+  --editor-bg: #12081f;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(120% 80% at 50% 0%, #2a1454 0%, #12081f 42%, #07040f 100%);
+  color: #f4f0ff;
+}
+
+.editor-shell {
+  min-height: 100vh;
+  padding: 16px 20px 32px;
+}
+
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.editor-topbar h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.preview-host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 96px);
+}
+
+.preview-pane {
+  box-sizing: content-box;
+  flex: 0 0 auto;
+  background: #0b0614;
+  box-shadow: 0 0 0 1px rgba(166, 88, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.preview-scaler {
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
+}
+
+.editor-pane {
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.editor-pane .box {
+  background: rgba(18, 8, 31, 0.92);
+  color: #f4f0ff;
+  border: 1px solid rgba(166, 88, 255, 0.2);
+}
+
+.editor-pane .label,
+.editor-pane .title {
+  color: #f4f0ff;
+}
+
+.player-editor + .player-editor {
+  margin-top: 10px;
+}
+
+.skin-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skin-option img,
+.char-option img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.secondary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.secondary-chips .tag {
+  cursor: pointer;
+}

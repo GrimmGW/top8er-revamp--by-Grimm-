@@ -1,0 +1,405 @@
+.graphic-canvas {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: #12081f;
+  color: #fff;
+  isolation: isolate;
+}
+
+.graphic-bg {
+  position: absolute;
+  inset: -8%;
+  background:
+    radial-gradient(42% 36% at 18% 8%, rgba(166, 88, 255, 0.42) 0%, transparent 58%),
+    radial-gradient(38% 32% at 72% 4%, rgba(124, 58, 237, 0.38) 0%, transparent 55%),
+    linear-gradient(180deg, #3a1d73 0%, #1a0a2e 42%, #0a0514 78%);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.graphic-bg-image {
+  position: absolute;
+  inset: -8%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.graphic-header {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 72px 0 73px;
+  font-family: "DINProCondBlackIta", sans-serif;
+  font-style: italic;
+  text-transform: none;
+}
+
+.graphic-header-left,
+.graphic-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.graphic-header-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.graphic-title {
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.graphic-subtitle {
+  font-family: "DINProCondLightIta", sans-serif;
+  font-style: italic;
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.graphic-event {
+  font-size: 36px;
+  line-height: 1.05;
+}
+
+.graphic-slug {
+  font-family: "DINProCondLightIta", sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.graphic-grid {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  width: 1801px;
+  height: 677px;
+  transform: translate(-50%, -46%);
+}
+
+.graphic-grid > * {
+  position: absolute;
+}
+
+.slot-first {
+  left: 0;
+  top: 0;
+  width: 398px;
+  height: 677px;
+}
+.slot-2 {
+  left: 360px;
+  top: 0;
+  width: 347px;
+  height: 332px;
+}
+.slot-3 {
+  left: 668px;
+  top: 0;
+  width: 347px;
+  height: 332px;
+}
+.slot-4 {
+  left: 977px;
+  top: 0;
+  width: 347px;
+  height: 332px;
+}
+.slot-top9 {
+  left: 1326px;
+  top: 0;
+  width: 475px;
+  height: 334px;
+  overflow: visible;
+}
+.slot-5a {
+  left: 309px;
+  top: 344px;
+  width: 347px;
+  height: 332px;
+}
+.slot-5b {
+  left: 618px;
+  top: 344px;
+  width: 347px;
+  height: 332px;
+}
+.slot-7a {
+  left: 926px;
+  top: 344px;
+  width: 347px;
+  height: 332px;
+}
+.slot-7b {
+  left: 1235px;
+  top: 344px;
+  width: 347px;
+  height: 332px;
+}
+
+.player-card {
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  container-type: size;
+}
+
+.card-shape {
+  --slant: calc(tan(8.36deg) * 100cqh);
+  --name-center: 16px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  clip-path: polygon(var(--slant) 0, 100% 0, calc(100% - var(--slant)) 100%, 0 100%);
+  overflow: hidden;
+}
+
+.card-art {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.card-fill {
+  position: absolute;
+  inset: 0;
+}
+
+.character-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.player-card.first .character-art {
+  left: -80px;
+  right: -4%;
+  top: -6%;
+  bottom: 0;
+}
+
+.secondary-icons {
+  position: absolute;
+  top: 10px;
+  left: calc(tan(8.36deg) * 100cqh + 8px);
+  z-index: 5;
+  display: flex;
+  gap: 6px;
+}
+
+.secondary-icons img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
+}
+
+.nameplate {
+  position: relative;
+  z-index: 6;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 76px;
+}
+
+.player-name {
+  font-family: "DINProCondBlackIta", sans-serif;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #fff;
+  background: #111;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px calc(var(--slant) - tan(8.36deg) * 53px + 12px - var(--name-center)) 4px calc(tan(8.36deg) * 53px + 12px + var(--name-center));
+  -webkit-text-stroke: 0.55px #fff;
+  paint-order: stroke fill;
+}
+
+.player-card.no-prefix .player-name {
+  flex: 1;
+  min-height: 76px;
+  padding: 8px calc(var(--slant) - tan(8.36deg) * 38px + 12px - var(--name-center)) 4px calc(tan(8.36deg) * 38px + 12px + var(--name-center));
+  font-size: 40px;
+}
+
+.player-card.has-prefix .player-name {
+  flex: 0 0 auto;
+  min-height: 46px;
+  font-size: 40px;
+}
+
+.player-prefix {
+  font-family: "DINProCondLightIta", sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #111;
+  background: #fff;
+  text-align: center;
+  padding: 1px calc(var(--slant) - tan(8.36deg) * 17px + 12px - var(--name-center)) 1px calc(tan(8.36deg) * 17px + 12px + var(--name-center));
+  min-height: 34px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-text-stroke: 0.7px #111;
+  paint-order: stroke fill;
+}
+
+.placement {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-42%) skewX(-8.36deg);
+  transform-origin: center bottom;
+  font-family: "DFGGothicSU", "M PLUS 1p", sans-serif;
+  font-weight: 900;
+  font-size: 88px;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: #fff;
+  -webkit-text-stroke: 7px #141414;
+  paint-order: stroke fill;
+  text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 10px 18px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.player-card.first .placement {
+  left: 36%;
+  bottom: 8px;
+  font-size: 96px;
+  color: #f2c14b;
+  -webkit-text-stroke: 8px #3b2208;
+  text-shadow: 0 5px 0 #8d5a12, 0 12px 16px rgba(0, 0, 0, 0.45);
+}
+
+.placement.is-2nd {
+  color: #fff;
+}
+
+.placement.is-3rd {
+  color: #ff8a32;
+  -webkit-text-stroke: 7px #4a2208;
+  text-shadow: 0 5px 0 #9a4a12, 0 10px 16px rgba(0, 0, 0, 0.4);
+}
+
+.top9-list {
+  position: relative;
+  height: 100%;
+  overflow: visible;
+}
+
+.top9-row {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 74px;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 78px;
+  align-items: stretch;
+  background: #111;
+  color: #fff;
+  clip-path: polygon(11px 0, 100% 0, calc(100% - 11px) 100%, 0 100%);
+  overflow: hidden;
+}
+
+.top9-row:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.top9-row:nth-child(2) {
+  top: 85px;
+  left: -14px;
+}
+.top9-row:nth-child(3) {
+  top: 172px;
+  left: -28px;
+}
+.top9-row:nth-child(4) {
+  top: 259px;
+  left: -40px;
+}
+
+.top9-place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "DINProCondBlackIta", sans-serif;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 1;
+  padding: 3px 0 1px 8px;
+}
+
+.top9-namewrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 10px 1px 4px;
+  min-width: 0;
+}
+
+.top9-prefix {
+  font-family: "DINProCondLightIta", sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  flex: 0 0 auto;
+  -webkit-text-stroke: 0.7px rgba(255, 255, 255, 0.92);
+  paint-order: stroke fill;
+  transform: translateY(1px);
+}
+
+.top9-name {
+  font-family: "DINProCondBlackIta", sans-serif;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-stroke: 0.55px #fff;
+  paint-order: stroke fill;
+}
+
+.top9-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #191919;
+}
+
+.top9-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
