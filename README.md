@@ -4,6 +4,8 @@ Generador local de gráficos **Top 8** en 1920×1080 para torneos de fighting ga
 
 El layout sigue el estilo Smash Hub. Las artes de personaje e iconos se cargan en remoto desde [Tournament Stream Helper](https://github.com/joaorb64/StreamHelper) / [StreamHelperAssets](https://github.com/joaorb64/StreamHelperAssets): no hace falta una instalación local de TSH.
 
+![Editor de Top 8 Creator](docs/editor.png)
+
 ## Características
 
 - Lienzo fijo **1920×1080** listo para stream o redes
